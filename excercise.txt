@@ -1,0 +1,58 @@
+Let's build a bookstore application
+
+The devs are busy working on the UI but they've already sent us the backend functions that they will require
+
+We will need a class to store the authors information (Class Author)
+-authorId (string) unique code that identifies the author
+-authorName (string)
+-books (List of Book) list of books written by this author
+-nationality (String) author nationality
+-alive (boolean) current living status
+-AddBook(Book) > Check if book already exists, if true do nothing, else Add book to list of books written by the author
+-RemoveBook(Book) > Remove book from list of written books
+-UpdateInformation (information)
+
+We will need a class to store the book information (Class Book):
+-bookId (string) unique code that identifies the book
+-Title (string) book title
+-author (Author) Author class for this book author - 
+-nPages (int) total number of pages
+-version (string) book version (ex. "version 2 - hardcover") 
+-genres (list of string) book genres ("horror", "action")
+-price (float) Book price
+-UpdateInformation(information)
+
+We will need a class to store all the books and provide a method to get books through either their title, author or bookId (Class Books)
+-books (list of Book)
+-GetBooks(title) - TODO
+-GetBooks(author) - done
+-GetBooks(bookId) - done
+-GetAuthor(Name) -TODO
+-GetAuthor(AuthorID)-TODO
+Think about how to 'Delete Books'
+
+
+We will need a class to store customer information (Class Customer)
+-customerId (int) unique code that identifies the customer
+-name (string) customer name
+-status (string) can be one of these options ["Active", "Inactive", "Banned", "Suspended"]
+-membership (string) can be one of these options ["Bronze", "Gold", "Platinum"]
+-purchaseHistory (list of book) list of books purchased by the customer
+-BanMember(self) > Change status to "Banned"
+-ActivateMember(self) > Change status to "Active"
+-DeactivateMember(
+
+
+we will need a class to manage all these classes (Class Bookstore)
+-booksAvailable (Dictionary <String (bookId), int (number of books available)>
+-Customers (list of customer)
+-books (Books)
+-BuyBook(bookId) > method to buy book. Check book availability and reduce number of books on current dictionary
+-ReturnBook(bookId) > increase number of book on currentDictionary
+-ImportInventory(csvPath) > Receive a path to a CSV file with list of books to add. Csv must contain a row for each bookId added
+-AddBookToInventory(book information) > Check if bookId already exists and if not create book object and add to registry. Increment number of books on dictionary
+-AddCustomer(customer information) > Check if user already exists, if yes, update customer information, if not create new customer and add to list
+-BanCustomer(CustomerId) > Check if customer exists and change it's status to "Banned"
+-UnBanCustomer(CustomerId) > Check if customer exists and change it's status to "Active"
+-DeleteCustomer(customerId) > Delete customer entry from list
+-GetCustomers(customer name) > Get all customer objects that match the provided customer name
