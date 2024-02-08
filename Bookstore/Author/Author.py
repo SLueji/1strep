@@ -22,6 +22,3 @@ class Author:
         output=output+"."+self.authorName+" has written"+" "+str(len(self.books))+" books"
         return output
 
-
-L=Author("1234","João","Portuguesa",False)
-N=Author("456","Sara","Italiana")
