@@ -1,5 +1,9 @@
 Let's build a bookstore application
 
+
+
+
+
 The devs are busy working on the UI but they've already sent us the backend functions that they will require
 
 We will need a class to store the authors information (Class Author)
